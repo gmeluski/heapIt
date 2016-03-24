@@ -2,7 +2,7 @@
   "name": "heap-it",
   "version": "1.0.0",
   "description": "a test for binary heaps",
-  "main": "heap.js",
+  "main": "lib/heap.js",
   "scripts": {
     "build": "babel src -d lib",
     "test": "mocha --compilers js:babel-register --recursive"
