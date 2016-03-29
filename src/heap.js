@@ -4,14 +4,31 @@ export default class Heap {
     this.heapCount = 0
   }
 
+  /**
+  * getter for the stack
+  *
+  * @return {Array} the stack
+  */
   get list () {
     return this.stack
   }
 
+  /**
+  * helper to return the parent index of an element in the stack
+  *
+  * @param {Number} the index
+  * @return {Number} the parent
+  */
   getParentIndex(i) {
     return Math.floor(i / 2)
   }
 
+  /**
+  * helper to swap two elements in the stack
+  *
+  * @param {Number} parentIndex
+  * @param {Number} childIndex
+  */
   swapPositions(parentIndex, childIndex) {
     let placeHolder = this.stack[parentIndex]
 
@@ -19,6 +36,11 @@ export default class Heap {
     this.stack[childIndex] = placeHolder
   }
 
+  /**
+  * find an element's proper value in the heap
+  *
+  * @param {Number}
+  */
   percolateUp(index) {
     let parentIndex = this.getParentIndex(index)
     let currentIndex = index
@@ -37,6 +59,11 @@ export default class Heap {
 
   }
 
+  /**
+  * insert a value in the heap
+  *
+  * @param {Number}
+  */
   insert(value) {
     this.stack.push(value)
     this.heapCount++
