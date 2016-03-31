@@ -59,6 +59,31 @@ export default class Heap {
 
   }
 
+  percolateDown(index) {
+    let smallerChildIndex
+
+    while (index * 2 < this.stack.length) {
+      smallerChildIndex = this.getSmallerChildIndex(index)
+      if (this.stack[index] > this.stack[smallerChildIndex]) {
+        this.swapPositions(index, smallerChildIndex)
+      }
+      index = smallerChildIndex
+    }
+
+  }
+
+  getSmallerChildIndex(parentIndex) {
+    let firstIndex = parentIndex * 2
+    let secondIndex = parentIndex * 2 + 1
+
+    if (secondIndex > this.stack.length ||
+      this.stack[firstIndex] < this.stack[secondIndex]) {
+      return firstIndex
+    }
+
+    return secondIndex
+  }
+
   /**
   * insert a value in the heap
   *
@@ -70,6 +95,16 @@ export default class Heap {
     this.percolateUp(this.heapCount)
   }
 
+  /**
+  * build a heap from an unsorted array
+  *
+  * @param {Array} the heap
+  */
+  removeByIndex(index) {
+    let x = this.stack.pop()
+    console.log(x)
+
+  }
 
 }
 
