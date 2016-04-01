@@ -59,6 +59,11 @@ export default class Heap {
 
   }
 
+  /**
+  * compare down the heap
+  *
+  * @param {Number} index
+  */
   percolateDown(index) {
     let smallerChildIndex
 
@@ -72,6 +77,12 @@ export default class Heap {
 
   }
 
+  /**
+  * helper to find the smallest of an index's two children
+  *
+  * @param {Number} parentIndex
+  * @return {Number}
+  */
   getSmallerChildIndex(parentIndex) {
     let firstIndex = parentIndex * 2
     let secondIndex = parentIndex * 2 + 1
@@ -101,8 +112,15 @@ export default class Heap {
   * @param {Array} the heap
   */
   removeByIndex(index) {
-    let x = this.stack.pop()
-    console.log(x)
+    let lastElement = this.stack.pop()
+    let parentIndex = this.getParentIndex(index)
+    this.stack[index] = lastElement
+
+    if (this.stack[index] < this.stack[parentIndex]) {
+      this.percolateUp(index)
+    } else {
+      this.percolateDown(index)
+    }
 
   }
 

@@ -35,9 +35,7 @@ describe("the heap module", () => {
     heap.insert(5)
     // [0, 1, 9, 4, 13, 5]
     // [0, 1, 5, 4, 13, 9]
-    console.log(heap.list)
 
-    // [0, 1, 5, 4, 13, 9]
     // 0 1 5 4 13 9
     // 0 1 9 4 13
     // compare to parent
@@ -46,8 +44,13 @@ describe("the heap module", () => {
     // is the new item less than the parent
     // if so sift up
     // else sift it down
+    // so sift down
+    // 0 1 9 4 13
+    // the child of 9 is 4 -> 13
+    // 9 < 13
+    // every thing ok
     heap.removeByIndex(2)
-    expect(heap.list).to.eql([0, 1, 5, 9, 13])
+    expect(heap.list).to.eql([0, 1, 9, 4, 13])
   })
 })
 
