@@ -1,12 +1,12 @@
 {
   "name": "heap-it",
-  "version": "1.0.0",
-  "description": "a test for binary heaps",
+  "version": "1.0.1",
+  "description": "a binary min-heap",
   "homepage": "https://github.com/gmeluski/heapIt",
   "repository": {
     "type": "git",
     "url": "https://github.com/gmeluski/heapIt.git"
-  }
+  },
   "main": "lib/heap.js",
   "scripts": {
     "build": "babel src -d lib",
